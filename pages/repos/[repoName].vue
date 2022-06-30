@@ -9,7 +9,7 @@ const { pending, data: repo } = await useLazyFetch(
   <div>
     <h2>Repo name: {{ $route.params.repoName }}</h2>
     <div v-if="pending">Loading ...</div>
-    <div v-else>
+    <div v-else id="repo-details">
       Owner: {{ repo.owner.login }}
       <br />
       Description: {{ repo.description }}
@@ -26,3 +26,5 @@ const { pending, data: repo } = await useLazyFetch(
     <NuxtLink to="/repos"> Go Back</NuxtLink>
   </div>
 </template>
+
+<style scoped src="@/assets/styles/repo-details.css"></style>
