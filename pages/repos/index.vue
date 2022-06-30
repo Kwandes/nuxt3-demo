@@ -8,14 +8,14 @@ const { pending, data: repos } = await useLazyFetch("/api/repos");
     <div v-if="pending">Loading ...</div>
     <div v-else>
       <div v-for="repo in repos">
-        {{ repo.name }}
+        <NuxtLink :to="{ path: `/repos/${repo.name}` }">{{
+          repo.name
+        }}</NuxtLink>
         <hr />
       </div>
     </div>
     <hr />
-    <NuxtLink to="/repos/nuxt3-demo"
-      >See specific repo information (nuxt3-demo)</NuxtLink
-    >
+
     <br />
     <NuxtLink to="/"> Go Back</NuxtLink>
   </div>

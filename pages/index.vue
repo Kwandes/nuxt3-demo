@@ -11,9 +11,5 @@ const healthcheckResponse = await useFetch("/api/healthcheck", {});
     <br />
     <h2>Api status: {{ healthcheckResponse.data }}</h2>
     <NuxtLink to="/repos">See a list of repos</NuxtLink>
-    <br />
-    <NuxtLink to="/repos/nuxt3-demo"
-      >See specific repo information (nuxt3-demo)</NuxtLink
-    >
   </div>
 </template>
